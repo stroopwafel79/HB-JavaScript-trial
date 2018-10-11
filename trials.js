@@ -8,7 +8,7 @@
 // Add function to prnt profile info
 
 function showProfile (name, catchPhrase, location) {
-	console.log(`PROFILE:\n Name: ${name}\n Catchphrase: ${catchPhrase}\n Location: ${location}`);
+	return (`PROFILE:\n Name: ${name}\n Catchphrase: ${catchPhrase}\n Location: ${location}`);
 }
 
 
@@ -20,7 +20,7 @@ const interests = [
   'staring at human food'
 ];
 
-function showLikes(interests) {
+function showInterests(interests) {
 	console.log('THINGS I LIKE: ');
 	for (let interest of interests) { 
 			console.log(`${interest}`);
@@ -129,9 +129,24 @@ function showAcctActivity (current_balance, transactions) {
 // Creating a User Object
 
 // Add user object
+const userProfiles = {
+	'name': 'Kristi',
+	'catchPhrase': 'Blah',
+	'location': 'Oaktown',
+	'interests': interests,
+	'favorites': favorites,
+	'transactions': transactions,
+	'startingMeloncoinBalance': 1234567
+};
 
 // Add function to print user dashboard
+function showDashboard(data) {
 
+	console.log(showProfile(data['name'], data['catchPhrase'], data['location']));
+	console.log(showInterests(data['interests']));
+	console.log(showFavorites(data['favorites']));
+	console.log(showAcctActivity(data['startingMeloncoinBalance'], data['transactions']));
+}
 
 
 /////////////////////////////////////////////////////////
