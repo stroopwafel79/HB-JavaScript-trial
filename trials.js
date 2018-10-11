@@ -4,7 +4,12 @@
 /////////////////////////////////////////////////////////
 // Show Profile Info
 
+
 // Add function to prnt profile info
+
+function showProfile (name, catchPhrase, location) {
+	console.log(`PROFILE:\n Name: ${name}\n Catchphrase: ${catchPhrase}\n Location: ${location}`);
+}
 
 
 /////////////////////////////////////////////////////////
@@ -15,7 +20,13 @@ const interests = [
   'staring at human food'
 ];
 
-// Add function to print interests
+function showLikes(interests) {
+	console.log('THINGS I LIKE: ');
+	for (let interest of interests) { 
+			console.log(`${interest}`);
+	}
+}
+
 
 
 
