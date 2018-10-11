@@ -33,10 +33,18 @@ function showLikes(interests) {
 /////////////////////////////////////////////////////////
 // Display Favorites
 const favorites = {
-  // Add more favorites
+  'food': 'pebbles',
+  'tree': 'palm',
+  'quote': 'Bock bock bock'
 };
 
-// Add function to print favorites
+function showFavorites(favorites) {
+
+	console.log('Favorites:')
+	for (let [key, value] of Object.entries(favorites)) {
+		console.log(`${key}: ${value}`);
+	}
+}
 
 
 
