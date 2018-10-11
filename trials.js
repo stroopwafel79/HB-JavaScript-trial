@@ -55,10 +55,20 @@ function showFavorites(favorites) {
 // Add Transactions
 
 // Add function to add transaction
+function addTransactions(date, amount, transactions) {
+	transactions[date]= amount;
+	console.log(` ${transactions}`);
+}
 
 // Create object to hold transactions
-
+const transactions = {}
 // Add transactions to object
+addTransactions('may2', -500, transactions);
+addTransactions('may13', +1200, transactions);
+addTransactions('may15', -100, transactions);
+addTransactions('may21', -359, transactions);
+addTransactions('may29', +2200, transactions);
+
 
 
 /////////////////////////////////////////////////////////
