@@ -78,13 +78,14 @@ addTransactions('may29', +2200, transactions);
 function getBalanceStatus(balance) {
 
 	if (balance < 0) {
-		console.log("YOU ARE OVERDRAWN"); 
+		return ("YOU ARE OVERDRAWN");
+		
 	}
 	else if (balance > 0 & balance < 20) {
-		console.log("Warning! Your balance is almost 0");
+		return ("Warning! Your balance is almost 0");
 	}
 	else if (balance > 20) {
-		console.log("normal"); 
+		return ("normal"); 
 	}
 }
 /////////////////////////////////////////////////////////
@@ -92,26 +93,36 @@ function getBalanceStatus(balance) {
 
 // Add function to calculate and return current balance
 
-function getCurrentBalance(money, transactions) {
-	let balance = money;
+function getCurrentBalance(current_balance, transactions) {
+	let balance = current_balance;
 
 	for (let value of Object.values(transactions)) {
 		balance += value;
-		
+
 		if (balance < 0) {
 			balance - 25; 
 		}
 
 	}
 
-	console.log(`Balance: is ${balance}`);
+	return balance
 }
 
 /////////////////////////////////////////////////////////
 // Show Account Activity
 
 // Add function to print account activity
+function showAcctActivity (current_balance, transactions) {
+	console.log("Transactions:");
+	
+	for (let [key, value] of Object.entries(transactions)) {
+		console.log(`${key}: ${value}`);
+	}
+	const balance = getCurrentBalance(current_balance, transactions);
+	console.log(`CURRENT BALANCE: ${balance}`);
 
+	console.log(`CURRENT STATUS: ${getBalanceStatus(balance)}`);
+}
 
 
 /////////////////////////////////////////////////////////
